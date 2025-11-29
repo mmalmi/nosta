@@ -6,7 +6,7 @@ description = "Git smart HTTP protocol implementation for nosta"
 
 [dependencies]
 # Hashtree storage
-hashtree = { path = "../../../hashtree-rs/crates/hashtree" }
+hashtree.workspace = true
 lmdb-blob-store = { path = "../lmdb-blob-store" }
 
 # Async runtime

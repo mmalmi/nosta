@@ -1,6 +1,11 @@
 [workspace]
 members = [".", "crates/lmdb-blob-store", "crates/nosta-git", "crates/nosta-relay", "crates/git-remote-nostr"]
 
+[workspace.dependencies]
+hashtree = { git = "https://github.com/mmalmi/hashtree-rs" }
+nostrdb = { git = "https://github.com/mmalmi/nostrdb-rs" }
+enostr = { git = "https://github.com/mmalmi/notedeck" }
+
 [package]
 name = "nosta"
 version = "0.1.0"
@@ -8,7 +13,7 @@ edition = "2021"
 
 [dependencies]
 lmdb-blob-store = { path = "crates/lmdb-blob-store" }
-hashtree = { path = "../hashtree-rs/crates/hashtree" }
+hashtree.workspace = true
 heed = "0.20"
 clap = { version = "4.5", features = ["derive"] }
 axum = { version = "0.7", features = ["multipart", "ws"] }
@@ -31,8 +36,8 @@ rand = "0.8"
 nostr = "0.37"
 secp256k1 = { version = "0.29", features = ["global-context"] }
 
-# Nostr event database (use local path to match enostr)
-nostrdb = { path = "../nostrdb-rs" }
+# Nostr event database
+nostrdb.workspace = true
 
 # Relay connections
 nosta-relay = { path = "crates/nosta-relay" }
