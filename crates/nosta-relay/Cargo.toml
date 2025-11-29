@@ -6,8 +6,8 @@ description = "Nostr relay implementation using nostrdb"
 
 [dependencies]
 # Core
-nostrdb.workspace = true
-enostr.workspace = true
+nostrdb = { path = "../../../nostrdb-rs" }
+enostr = { path = "../../../notedeck/crates/enostr" }
 nostr = "0.37"
 
 # Async/Web

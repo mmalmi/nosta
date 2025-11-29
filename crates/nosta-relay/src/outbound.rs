@@ -154,7 +154,6 @@ impl RelayManager {
                         RelayMessage::Eose(subid) => {
                             debug!("EOSE from {} for {}", pool_event.relay, subid);
                         }
-                        _ => {}
                     }
                 }
             }

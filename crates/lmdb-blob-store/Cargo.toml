@@ -5,7 +5,7 @@ edition = "2021"
 description = "LMDB-backed content-addressed blob storage"
 
 [dependencies]
-hashtree.workspace = true
+hashtree = { path = "../../../hashtree-rs/crates/hashtree" }
 heed = "0.20"
 async-trait = "0.1"
 

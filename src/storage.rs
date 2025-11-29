@@ -1211,3 +1211,10 @@ mod tests {
         Ok(())
     }
 }
+
+// Implement ContentStore trait for WebRTC data exchange
+impl crate::webrtc::ContentStore for NostaStore {
+    fn get(&self, hash_hex: &str) -> Result<Option<Vec<u8>>> {
+        self.get_chunk(hash_hex)
+    }
+}

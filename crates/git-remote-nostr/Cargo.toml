@@ -13,7 +13,7 @@ path = "src/main.rs"
 nosta-git = { path = "../nosta-git" }
 
 # Content-addressed storage
-hashtree.workspace = true
+hashtree = { path = "../../../hashtree-rs/crates/hashtree" }
 lmdb-blob-store = { path = "../lmdb-blob-store" }
 dirs = "5"
 

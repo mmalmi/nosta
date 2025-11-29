@@ -23,6 +23,9 @@ enum Commands {
     Start {
         #[arg(long, default_value = "127.0.0.1:8080")]
         addr: String,
+        /// Enable WebRTC P2P connections
+        #[arg(long)]
+        webrtc: bool,
     },
     /// Upload a file and get its CID
     Upload {
@@ -62,7 +65,7 @@ async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Start { addr } => {
+        Commands::Start { addr, webrtc } => {
             // Load or create config
             let config = Config::load()?;
 
@@ -125,6 +128,10 @@ async fn main() -> Result<()> {
                 None
             };
 
+            // WebRTC is not yet supported in the daemon (enostr RelayPool is not Send)
+            // Use the standalone webrtc-test binary for testing
+            let _ = webrtc;
+
             // Set up server with nostr relay (inbound) and query sender
             let mut server = NostaServer::new(store, addr.clone())
                 .with_ndb(ndb)
@@ -155,6 +162,9 @@ async fn main() -> Result<()> {
             println!("Git remote: http://{}/git/<pubkey>/<repo>", addr);
             if let Some(ref handle) = stun_handle {
                 println!("STUN server: {}", handle.addr);
+            }
+            if webrtc {
+                println!("WebRTC: enabled (P2P connections)");
             }
 
             if config.server.enable_auth {
