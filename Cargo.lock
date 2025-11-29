@@ -1212,6 +1212,7 @@ dependencies = [
 [[package]]
 name = "enostr"
 version = "0.3.0"
+source = "git+https://github.com/mmalmi/notedeck#84a174dd69d5e2515e609331209da8bea676764e"
 dependencies = [
  "bech32",
  "bytes",
@@ -1220,6 +1221,7 @@ dependencies = [
  "hex",
  "interceptor",
  "mio",
+ "negentropy 0.5.0",
  "nostr",
  "nostrdb",
  "parking_lot",
@@ -1227,12 +1229,15 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
+ "sha2 0.10.9",
+ "socket2 0.6.1",
  "stun",
  "thiserror 2.0.17",
  "tokenator",
  "tokio",
  "tracing",
  "url",
+ "uuid",
  "webrtc",
  "webrtc-data",
  "webrtc-ice",
@@ -1635,6 +1640,7 @@ checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
 [[package]]
 name = "hashtree"
 version = "0.1.0"
+source = "git+https://github.com/mmalmi/hashtree-rs#326a9917a66cc6a49a8a99a760851dd507b6e491"
 dependencies = [
  "async-trait",
  "ciborium",
@@ -2386,6 +2392,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43a88da9dd148bbcdce323dd6ac47d369b4769d4a3b78c6c52389b9269f77932"
 
 [[package]]
+name = "negentropy"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0efe882e02d206d8d279c20eb40e03baf7cb5136a1476dc084a324fbc3ec42d"
+
+[[package]]
 name = "nix"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2540,6 +2552,7 @@ dependencies = [
 [[package]]
 name = "nostrdb"
 version = "0.8.0"
+source = "git+https://github.com/mmalmi/nostrdb-rs#6a9f839681d6c45e09637775897a6ff056a88df0"
 dependencies = [
  "bindgen",
  "cc",
@@ -4012,6 +4025,7 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 [[package]]
 name = "tokenator"
 version = "0.1.0"
+source = "git+https://github.com/mmalmi/notedeck#84a174dd69d5e2515e609331209da8bea676764e"
 dependencies = [
  "hex",
 ]
